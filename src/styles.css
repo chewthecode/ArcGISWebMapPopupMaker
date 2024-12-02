@@ -1,0 +1,135 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+.container {
+    display: flex;
+}
+.content {
+    flex: 1;
+}
+.image-container {
+    flex: 0 0 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+}
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid grey;
+}
+.image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    display: none;
+}
+.dark-mode .image-container::after {
+    display: block;
+}
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 100px;
+}
+.displayName, .fieldName {
+    margin-right: 10px;
+    min-width: 300px;
+    font-size: smaller;
+}
+.buttonContainer {
+    display: flex;
+    margin-bottom: 20px;
+}
+.buttonContainer button {
+    margin-right: 5px;
+    font-size: 16px;
+    min-width: 30px;
+    min-height: 25px;
+    padding: 2px;
+}
+#addMultipleRows {
+    display: flex;
+    min-width: 50px;
+    margin-left: 80px;
+    justify-content: center;
+}
+#removeMultipleRows {
+    display: flex;
+    min-width: 50px;
+    justify-content: center;
+}
+#headerInput {
+    font-weight: bold;
+    font-size: x-large;
+    min-height: 36px;
+    min-width: 400px;
+    margin-bottom: 15px;
+}
+#output {
+    width: 90%;
+    min-height: 300px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    resize: both; 
+}
+.grip {
+    cursor: grab;
+    margin-right: 10px;
+}
+.grip::before {
+    content: '⋮⋮';
+    font-size: 20px;
+}
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+.dark-mode .row {
+    background-color: #1e1e1e;
+}
+.dark-mode input, .dark-mode textarea {
+    background-color: #333333;
+    color: #ffffff;
+}
+.dark-mode input::placeholder, .dark-mode textarea::placeholder {
+    color: #bbbbbb;
+}
+.dark-mode img {
+    border: 1px solid whitesmoke;
+}
+.dark-mode #helpDialog {
+    background-color: #121212;
+    color: #ffffff;
+}
+#helpDialog {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+}
+#closeDialog {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+#toggleDarkMode {
+    margin-bottom: 0px;
+}
+#help {
+    position: absolute;
+    right: 30px;
+}
+#generate {
+    margin-top: 5px;
+}

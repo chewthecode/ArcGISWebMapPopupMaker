@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Chew">
+    <meta name="version" content="1.1.0">
+    <title>WebMap Popup Maker</title>
+</head>
+<body class="dark-mode">
+    <h1>ArcGIS WebMap HTML Generator</h1>
+    <button id="toggleDarkMode">Toggle Dark Mode</button>
+
+    <button id="help" title="Help"><strong>?</strong></button>
+    <dialog id="helpDialog">
+        <h2>You found the Help Guide!</h2>
+        <p>This tool is used to generate HTML that can be placed directly into ArcGIS WebMaps.</p>
+        <p style="font-size: 6px;margin-bottom:100px;">If you don't know how to use this, you haven't suffered manipulating WebMap popups manually long enough. Consider yourself lucky! </p>
+        <p>Feedback goes to seanchew88@gmail.com</p>
+        <button id="closeDialog">Got it!</button>
+    </dialog>
+    
+    <h3 style="margin-bottom: -10px;text-decoration: underline;">Ref</h3>
+    <p style="font-family: Arial, Helvetica, sans-serif;font-size: small;">expression/expr0<br/>expression/expr1</p>
+    <div class="container">
+        <div class="content">
+            <div>
+                <input type="text" id="headerInput" placeholder="Enter Header">
+            </div>
+            <div class="buttonContainer">
+                <button id="addRow" title="Add 1 row">+</button>
+                <button id="removeRow" title="Remove 1 row (bottom)">-</button>
+                <button id="addMultipleRows" title="Add 3 rows">+++</button>
+                <button id="removeMultipleRows" title="Remove 3 rows (bottom)">---</button>
+            </div>
+            <div id="inputContainer">
+                <div class="row">
+                    <div class="grip"></div>
+                    <input type="text" placeholder="Display Name" class="displayName">
+                    <input type="text" placeholder="Field Name" class="fieldName">
+                </div>
+            </div>
+            <div>
+                <button id="generate">Generate!</button>
+            </div>
+            <textarea id="output" readonly></textarea>
+        </div>
+    </div>
+
+    <!-- Include SortableJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
